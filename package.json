@@ -3,11 +3,15 @@
   "version": "1.0.0",
   "main": "index.js",
   "type": "module",
-  "scripts": {
-    "start": "node --env-file .env --experimental-strip-types --no-warnings src/server.ts",
-    "dev": "node --env-file .env --experimental-strip-types --no-warnings --watch src/server.ts",
-    "db:seed": "node --env-file .env --experimental-strip-types --no-warnings src/db/seed.ts"
-  },
+ "scripts": {
+  "start": "node --env-file .env --experimental-strip-types --no-warnings src/server.ts",
+  "dev": "node --env-file .env --experimental-strip-types --no-warnings --watch src/server.ts",
+  "build": "tsc -b && vite build",
+  "preview": "vite preview",
+  "db:migrate": "drizzle-kit migrate",
+  "db:generate": "drizzle-kit generate",
+  "db:seed": "node --env-file .env --experimental-strip-types --no-warnings src/db/seed.ts"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
